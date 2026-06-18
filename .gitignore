@@ -1,0 +1,74 @@
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+token.json
+credentials.json
+
+# Python environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache and build output
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test, coverage, and type-checker caches
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.tox/
+.nox/
+
+# Databricks bundle/local state
+.databricks/
+.bundle/
+
+# Airflow (local standalone) — generated runtime state, never commit
+# (airflow/dags/ IS committed; only the generated files below are ignored)
+airflow/airflow.cfg
+airflow/airflow.db
+airflow/*.pid
+airflow/logs/
+airflow/standalone_admin_password.txt
+airflow/webserver_config.py
+airflow/simple_auth_manager_passwords.json.generated
+
+# Logs and runtime artifacts
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# Local data exports and generated files
+data/
+downloads/
+exports/
+*.parquet
+*.avro
+*.orc
+*.csv
+*.xlsx
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
