@@ -56,4 +56,12 @@ def get_engine():
         database=p["database"],
     )
     engine = create_engine(url)
+    # Redshift has NO `... RETURNING`. The sqlalchemy-redshift dialect (built on
+    # the Postgres dialect, which does) fails to disable it under SQLAlchemy 2.0,
+    # so Alembic's `INSERT INTO alembic_version ... RETURNING` — and any ORM
+    # insert that would use RETURNING — errors out. Force it off.
+    engine.dialect.insert_returning = False
+    engine.dialect.update_returning = False
+    engine.dialect.delete_returning = False
+    # Because Redshift doesn't support the RETURNING clause for INSERT, UPDATE, and DELETE statements
     return engine
