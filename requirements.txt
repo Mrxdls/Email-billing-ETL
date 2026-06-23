@@ -2,12 +2,16 @@
 google-api-python-client>=2.0
 google-auth>=2.0
 
-# AWS (S3 raw landing + Secrets Manager)
+# AWS (S3 + Secrets Manager)
 boto3>=1.34
 
-# Operational Postgres (history_id watermark)
+# Operational Postgres
 psycopg2-binary>=2.9
 
-# Warehouse (Synapse) — schema + connectivity
+# Warehouse (Redshift) — native driver + SQLAlchemy dialect
 SQLAlchemy>=2.0
-pyodbc>=5.0
+redshift_connector>=2.1
+sqlalchemy-redshift>=0.8
+
+# Silver extraction (HTML parsing)
+beautifulsoup4>=4.12
