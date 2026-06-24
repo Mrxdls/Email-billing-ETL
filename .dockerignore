@@ -1,0 +1,19 @@
+# keep the build context small + never bake secrets/venv into the image
+venv/
+**/__pycache__/
+*.pyc
+*.pyo
+.git/
+.env
+.env.*
+# Airflow local-standalone runtime state (not needed in the image)
+airflow/logs/
+airflow/airflow.cfg
+airflow/airflow.db
+airflow/*.pid
+airflow/standalone_admin_password.txt
+airflow/webserver_config.py
+airflow/simple_auth_manager_passwords.json.generated
+**/.ipynb_checkpoints/
+tests/
+*.md
