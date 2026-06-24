@@ -1,3 +1,3 @@
 # ETL
 
-Gmail → S3 (bronze) → silver → warehouse pipeline. WIP.
+Gmail -> silver extraction -> Synapse star-schema warehouse.
