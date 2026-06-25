@@ -50,8 +50,10 @@ services:
       - -c
       - |
         airflow db migrate
-        airflow users create --username gojo_satoru --password hollow_purple \
-          --firstname Satoru --lastname Gojo --role Admin --email gojo@jujutsu.tech || true
+        airflow users create --username "${AIRFLOW_ADMIN_USERNAME:-admin}" \
+          --password "${AIRFLOW_ADMIN_PASSWORD:?set AIRFLOW_ADMIN_PASSWORD in .env}" \
+          --firstname Admin --lastname User --role Admin \
+          --email "${AIRFLOW_ADMIN_EMAIL:-admin@example.com}" || true
         airflow dags reserialize || true
         airflow dags unpause billing_pipeline || true
     restart: on-failure
