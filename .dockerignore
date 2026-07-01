@@ -1,5 +1,6 @@
 # keep the build context small + never bake secrets/venv into the image
 venv/
+.airflow-venv/
 **/__pycache__/
 *.pyc
 *.pyo
@@ -10,6 +11,7 @@ venv/
 airflow/logs/
 airflow/airflow.cfg
 airflow/airflow.db
+airflow/airflow.db.bak-*
 airflow/*.pid
 airflow/standalone_admin_password.txt
 airflow/webserver_config.py

@@ -11,6 +11,7 @@ credentials.json
 # Python environments
 venv/
 .venv/
+.airflow-venv/
 env/
 ENV/
 
@@ -43,6 +44,9 @@ htmlcov/
 # (airflow/dags/ IS committed; only the generated files below are ignored)
 airflow/airflow.cfg
 airflow/airflow.db
+airflow/airflow.db.bak-*
+airflow/airflow.db-shm
+airflow/airflow.db-wal
 airflow/*.pid
 airflow/logs/
 airflow/standalone_admin_password.txt
