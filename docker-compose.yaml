@@ -12,6 +12,8 @@ x-airflow-common: &airflow-common
   build:
     context: .
     dockerfile: Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   env_file:
     - .env                       # ETL: DATABASE_URL, REDSHIFT_*, GOOGLE_*, AWS_*, S3_RAW_BUCKET
   environment: &airflow-common-env
